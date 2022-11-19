@@ -1,0 +1,13 @@
+314CA Tudorache Bogdan-Mihai
+
+    Tema2 propune rezolvarea problemei estimarii cardinalitatii prin trei metode diferite.
+    1. Vector de frecventa
+    Pentru vectorul de frecventa, tot ce am facut a fost sa declar un vector de tip static unsigned int (variabilele de tip static nu se aloca pe stack, si banuiesc ca in acest caz alocarea contigua a 2 milioane de octeti este posibila) initializat cu 0 in care am memorat numarul aparitiilor fiecarui element in parte
+    2. Hashtable cu open adressing
+    Pentru a doua problema, am folosit un hashtable care rezolva coliziunile prin linear probing. Linear probing-ul consta in verificarea tuturor bucket-urilor de dupa bucket-ul la care apare coliziunea. Daca nu se gaseste un loc liber, verificarea incepe de la primul bucket si continua pana in bucket-ul la care a aparut coliziunea.
+    Numarul bucket-urilor este egal cu numarul liniilor din fisierul de intrare, asa ca in cazul in care toate intrarile sunt dinstincte, fiecare bucket va fi ocupat.
+    Functia de hash utilizata pentru string-uri nu este creata de mine, ci este luata din laboratorul de SD.
+    3. Estimatori probabilistici
+    Pentru aceasta problema am constuit o structura de date care preia toate intrarile, le prelucreaza si la sfarsit estimeaza numarul de elemente unice. Bucket-urile sunt formate din reprezentarea in decimal a primilor n biti a intrarii trecute printr-un hash, avand astfel 2^n bucket-uri. Informatia stocata in bucket reprezinta pozitia primului bit de 1 gasit in restul bitilor verificati. 
+    Se calculeaza media armonica a tuturor bucket-urilor si numarul de elemente unice se afla utilizand formula specifica.
+    Functia de hash utilizata pentru int-uri nu este creata de mine, ci este luata din laboratorul de SD

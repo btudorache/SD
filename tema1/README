@@ -1,0 +1,14 @@
+314CA Tudorache Bogdan-Mihai
+
+    Tema1 ne cere construirea unui playlist de melodii cu ajutorul unei liste dublu-inlantuite necirculare. Problema consta in construirea functiilor necesare pentru ca programul sa poata interpreteze cele 13 comenzi pe care le are acest playlist. Pe langa aceste 13 functii, este nevoie sa deschidem niste fisiere pentru a citi un input si a scrie un output si mai este necesar sa deschidem fisierele .mp3 pentru a stoca unele date despre melodie. Playlistul contine si un cursor, un pointer la melodia ce "ruleaza" la momentul respectiv, care are si el operatii specifice.
+    Construirea functiilor:
+    1. ADD
+    Pentru functiile de add, pe langa introducerea unui nod in lista dublu-inlantuita, a fost necesara initializarea unei structuri ce memoreaza datele despre melodie (struct Metadata), construirea acestei structuri prin deschiderea fisierelor .mp3 si preluarea datelor necesare, si salvarea unui pointer la o structura de acest gen in nod.
+    Inainte de a introduce un nod nou in lista, se verifica daca melodia ce urmeaza a fi introdusa se afla deja in playlist. In caz afirmativ, vechea pozitie se sterge, iar noua pozitie se introduce unde se cere: la inceput (add_first), la sfarsit (add_last), sau dupa cursor (add_after).
+    2. DEL
+    Pentru functiile de delete, se sterge nodul cerut din lista dublu-inlantuita si se elibereaza memoria alocata dinamic a nodurilor si a structurilor ce memoreaza datele despre melodie. Cursorul se muta pe pozitia urmatoare daca se poate, altfel se muta pe cea anterioara. Cam in acest fel functioneaza trei dintre functiile de delete (del_first, del_last, del_curr).
+    Pentru a patra functie (del_song), se cauta in fisierul .mp3 titlul melodiei, se cauta in lista si se sterge daca se gaseste.
+    3. MOVE
+    Functiie prev muta cursorul pe pozitia urmatoare (move_next) sau pe pozitia anterioara (move prev)
+    4. SHOW
+    Functiile show afiseaza date despre melodie. Se pot afisa date despre prima melodie (show_first), despre ultima melodie (show_last) sau despre melodia pe care se afla cursorul (show_curr) cu ajutorul functiei care afiseaza toate datele structurii struct Metadata. Se mai poate afisa intregul playlist, adica toate titlurile melodiilor ce se afla in playlist, prin parcurgerea listei si preluarea datelor necesare (show_playlist).
